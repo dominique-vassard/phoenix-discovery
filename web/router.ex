@@ -2,7 +2,7 @@ defmodule HelloPhoenix.Router do
   use HelloPhoenix.Web, :router
 
   pipeline :browser do
-    plug :accepts, ["html"]
+    plug :accepts, ["html", "text"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
@@ -19,6 +19,12 @@ defmodule HelloPhoenix.Router do
     get "/", PageController, :index
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
+    get "/users/:id", UsersController, :show
+    get "/users", UsersController, :index
+  end
+
+  scope "/", HelloPhoenix do
+    get "/redirect_test", PageController, :redirect_test, as: :redirect_test
   end
 
   # Other scopes may use custom stacks.

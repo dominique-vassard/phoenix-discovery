@@ -1,7 +1,29 @@
 defmodule HelloPhoenix.PageController do
   use HelloPhoenix.Web, :controller
 
+  plug :assign_message, "Hey you!"
+
   def index(conn, _params) do
-    render conn, "index.html"
+    conn
+    # Redirection
+    # |> redirect(to: "/redirect_test")
+    # |> redirect(to: redirect_test_path(conn, :redirect_test))
+    |> redirect(to: users_path(conn, :index))
+    # Flash message
+    # |> put_flash(:info, "Welcome flash!")
+    # |> put_flash(:error, "Error Flash.")
+    # |> render("index.html")
   end
+
+  def redirect_test(conn, _params) do
+    text conn, "Redirect!"
+  end
+
+  defp assign_message(conn, msg) do
+    conn
+    |> assign(:message, msg)
+  end
+
 end
+
+
