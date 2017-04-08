@@ -1,0 +1,7 @@
+<div class="jumbotron">
+    <p><%= handler_info @conn %></p>
+    <h3>Keys fromm conn struct</h3>
+    <%= for key <- connection_keys @conn do %>
+        <p><%= render HelloPhoenix.SharedView, "key.html", key: key %></p>
+    <% end %>
+</div>

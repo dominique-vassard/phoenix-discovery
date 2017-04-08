@@ -36,6 +36,10 @@ defmodule HelloPhoenix.PageController do
     render conn, "show_pages.json", pages: pages
   end
 
+  def test(conn, _params) do
+    render conn, "test_new.html"
+  end
+
 end
 
 
