@@ -1,0 +1,2 @@
+From assign: <%= @message %>
+Here is the message: <%= nice_message() %>
