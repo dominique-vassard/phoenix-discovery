@@ -38,3 +38,8 @@
 <div>
   <%= @message %>
 </div>
+<div>
+  <h3>Here is the chat</h3>
+  <div id="messages"></div>
+  <input id="chat-input" type="text"></input>
+</div>
