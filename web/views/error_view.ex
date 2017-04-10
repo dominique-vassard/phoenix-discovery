@@ -2,7 +2,6 @@ defmodule HelloPhoenix.ErrorView do
   use HelloPhoenix.Web, :view
 
   def render("404.html", assigns) do
-    IO.puts inspect assigns
     render("not_found.html", %{})
   end
 

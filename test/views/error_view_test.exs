@@ -5,8 +5,42 @@ defmodule HelloPhoenix.ErrorViewTest do
   import Phoenix.View
 
   test "renders 404.html" do
-    assert render_to_string(HelloPhoenix.ErrorView, "404.html", []) ==
-           "Page not found"
+    assert render_to_string(HelloPhoenix.ErrorView, "404.html", []) == """
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Welcome to Phoenix!</title>
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+        </ul>
+        <span class="logo"></span>
+      </div>
+
+      <div class="jumbotron">
+        <p>Sorry, the page you are looking for does not exist.</p>
+      </div>
+
+      <div class="footer">
+        <p><a href="http://phoenixframework.org">phoenixframework.org</a></p>
+      </div>
+
+    </div> <!-- /container -->
+    <script src="/js/app.js"></script>
+  </body>
+</html>
+"""
   end
 
   test "render 500.html" do

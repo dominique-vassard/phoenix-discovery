@@ -17,7 +17,7 @@ defmodule HelloPhoenix.Video do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :appreoved, :description, :likes, :views, :user_id])
-    |> validate_required([:name, :appreoved, :description, :likes, :views, :user_id])
+    |> cast(params, [:name, :appreoved, :description, :likes, :views])
+    |> validate_required([:name, :appreoved, :description, :likes, :views])
   end
 end

@@ -19,7 +19,7 @@ defmodule HelloPhoenix.User do
     |> cast(params, [:name, :email, :bio, :number_of_pets])
     |> validate_required([:name, :email, :bio])
     |> validate_length(:bio, min: 2)
-    |> validate_length(:bio, max: 2)
+    |> validate_length(:bio, max: 20)
     |> validate_format(:email, ~r/@/)
   end
 end
