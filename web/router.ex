@@ -19,11 +19,13 @@ defmodule HelloPhoenix.Router do
     get "/", PageController, :index
     get "/hello", HelloController, :index
     get "/hello/:messenger", HelloController, :show
-    get "/users/:id", UsersController, :show
-    get "/users", UsersController, :index
+    get "/users_old/:id", UsersController, :show
+    get "/users_old", UsersController, :index
     get "/show", PageController, :show
     get "/show_pages", PageController, :show_pages
     get "/test", PageController, :test
+    resources "/users", UserController
+    resources "/videos", VideoController
   end
 
   scope "/", HelloPhoenix do
