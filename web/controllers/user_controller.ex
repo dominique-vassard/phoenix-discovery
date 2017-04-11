@@ -66,4 +66,19 @@ defmodule HelloPhoenix.UserController do
     |> put_flash(:info, "User deleted successfully.")
     |> redirect(to: user_path(conn, :index))
   end
+
+  #### API
+  def list(conn,_params) do
+    users = User
+            |> Repo.all
+            |> Repo.preload([:videos])
+    render(conn, "index.json", users: users)
+  end
+
+  def get_user(conn, %{"id" => id}) do
+    case Repo.get(User, id) do
+      nil -> conn |> put_status(404) |> render("error.json")
+      user -> render conn, "show.json", user: user
+    end
+  end
 end
