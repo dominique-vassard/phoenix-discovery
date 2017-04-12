@@ -22,10 +22,10 @@ defmodule HelloPhoenix.UserController2Test do
     assert response == expected
   end
 
-  describe "create/2" do
-    test "Creates, and responds with a newly created user if attributes are valid"
-    test "Returns an error and does not create a user if attributes are invalid"
-  end
+  # describe "create/2" do
+  #   test "Creates, and responds with a newly created user if attributes are valid"
+  #   test "Returns an error and does not create a user if attributes are invalid"
+  # end
 
   describe "show/2" do
     test "Responds with a newly created user if the user is found" do
@@ -42,23 +42,24 @@ defmodule HelloPhoenix.UserController2Test do
 
     assert response == expected
     end
-    test "Responds with a message indicating user not found" do
-      response = build_conn
-      |> get(user_path(build_conn, :show, 300))
-      |> json_response(404)
 
-      expected = %{ "error" => "User not found." }
+    # test "Responds with a message indicating user not found" do
+    #   response = build_conn
+    #   |> get(user_path(build_conn, :show, 300))
+    #   |> json_response(404)
+
+    #   expected = %{ "error" => "User not found." }
 
 
-      assert response == expected
-    end
+    #   assert response == expected
+    # end
   end
 
-  describe "update/2" do
-    test "Edits, and responds with the user if attributes are valid"
-    test "Returns an error and does not edit the user if attributes are invalid"
-  end
+  # describe "update/2" do
+  #   test "Edits, and responds with the user if attributes are valid"
+  #   test "Returns an error and does not edit the user if attributes are invalid"
+  # end
 
-  test "delete/2 and responds with :ok if the user was deleted"
+  # test "delete/2 and responds with :ok if the user was deleted"
 
 end
