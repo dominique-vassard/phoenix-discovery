@@ -4,6 +4,9 @@ defmodule HelloPhoenix.ErrorViewTest do
   # Bring render/3 and render_to_string/3 for testing custom views
   import Phoenix.View
 
+  @moduletag :error_view_case
+
+  @tag error_test: "404"
   test "renders 404.html" do
     assert render_to_string(HelloPhoenix.ErrorView, "404.html", []) == """
 <!DOCTYPE html>
@@ -43,11 +46,13 @@ defmodule HelloPhoenix.ErrorViewTest do
 """
   end
 
+  @tag error_test: "500"
   test "render 500.html" do
     assert render_to_string(HelloPhoenix.ErrorView, "500.html", []) ==
            "Internal server error"
   end
 
+  @tag error_test: "other"
   test "render any other" do
     assert render_to_string(HelloPhoenix.ErrorView, "505.html", []) ==
            "Internal server error"
